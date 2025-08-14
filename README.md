@@ -122,6 +122,8 @@ Vue3+ts+Elementplus/
 
 - 用户名：admin
 - 密码：123456
+### 功能
+自动获取数,数据分析，数据对比，自动上传等功能
 
 ### 权限指令使用
 
@@ -172,6 +174,19 @@ Vue3+ts+Elementplus/
 - 使用Prettier格式化代码
 - 组件名使用PascalCase
 - 文件名使用kebab-case
+
+菜单介绍
+
+<img width="1579" height="813" alt="image" src="https://github.com/user-attachments/assets/11db9d20-a65a-4564-bbf5-9bde91eeaa98" />
+
+<img width="1879" height="935" alt="image" src="https://github.com/user-attachments/assets/87c27430-15df-4277-9db4-2a2626d1ee49" />
+
+<img width="1920" height="874" alt="image" src="https://github.com/user-attachments/assets/3297faaa-09f4-4c49-82be-7f27edb5f94d" />
+<img width="1920" height="926" alt="image" src="https://github.com/user-attachments/assets/e6b0cb97-d462-4ec9-a0bf-aca0df307057" />
+<img width="1905" height="929" alt="image" src="https://github.com/user-attachments/assets/f8218698-ad35-47ab-bc54-720cd8777cff" />
+
+
+
 
 ## 🤝 贡献指南
 
