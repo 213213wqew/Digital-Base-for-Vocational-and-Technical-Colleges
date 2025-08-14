@@ -1,0 +1,995 @@
+{
+  "menuList": [
+    {
+      "id": 1,
+      "name": "首页",
+      "path": "/dashboard",
+      "icon": "Odometer",
+      "component": "dashboard/index",
+      "type": "menu",
+      "sort": 1,
+      "visible": true,
+      "status": 1,
+      "permissions": ["dashboard:view"],
+      "meta": {
+        "title": "首页",
+        "requireAuth": true,
+        "cache": true
+      }
+    },
+    {
+      "id": 1001,
+      "name": "领导驾驶舱",
+      "path": "/cockpit",
+      "icon": "DataBoard",
+      "component": "cockpit_view/index",
+      "type": "menu",
+      "sort": 2,
+      "visible": true,
+      "status": 1,
+      "permissions": ["cockpit:view"],
+      "meta": {
+        "title": "领导驾驶舱",
+        "requireAuth": true,
+        "cache": false
+      }
+    },
+    {
+      "id": 2,
+      "name": "用户管理1",
+      "path": "/user",
+      "icon": "User",
+      "type": "catalog",
+      "sort": 3,
+      "visible": true,
+      "status": 1,
+      "permissions": ["user:view"],
+      "children": [
+        {
+          "id": 21,
+          "name": "用户列表",
+          "path": "/user/list",
+          "icon": "UserFilled",
+          "component": "user/list",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["user:list"],
+          "meta": {
+            "title": "用户列表",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 22,
+          "name": "用户资料",
+          "path": "/user/profile",
+          "icon": "Avatar",
+          "component": "user/profile",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["user:profile"],
+          "meta": {
+            "title": "用户资料",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 23,
+          "name": "用户设置",
+          "path": "/user/settings",
+          "icon": "Setting",
+          "component": "user/settings",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["user:settings"],
+          "meta": {
+            "title": "用户设置",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "角色管理",
+      "path": "/role",
+      "icon": "Postcard",
+      "type": "catalog",
+      "sort": 4,
+      "visible": true,
+      "status": 1,
+      "permissions": ["role:view"],
+      "children": [
+        {
+          "id": 31,
+          "name": "角色列表",
+          "path": "/role/list",
+          "icon": "List",
+          "component": "role/list",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["role:list"],
+          "meta": {
+            "title": "角色列表",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 32,
+          "name": "角色权限",
+          "path": "/role/permissions",
+          "icon": "Key",
+          "component": "role/permissions",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["role:permissions"],
+          "meta": {
+            "title": "角色权限",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 33,
+          "name": "角色分配",
+          "path": "/role/assignment",
+          "icon": "Connection",
+          "component": "role/assignment",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["role:assignment"],
+          "meta": {
+            "title": "角色分配",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "权限管理",
+      "path": "/permission",
+      "icon": "Lock",
+      "type": "catalog",
+      "sort": 5,
+      "visible": true,
+      "status": 1,
+      "permissions": ["permission:view"],
+      "children": [
+        {
+          "id": 41,
+          "name": "权限列表",
+          "path": "/permission/list",
+          "icon": "List",
+          "component": "permission/list",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["permission:list"],
+          "meta": {
+            "title": "权限列表",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 42,
+          "name": "菜单权限",
+          "path": "/permission/menu",
+          "icon": "Menu",
+          "component": "permission/menu",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["permission:menu"],
+          "meta": {
+            "title": "菜单权限",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 43,
+          "name": "按钮权限",
+          "path": "/permission/button",
+          "icon": "Operation",
+          "component": "permission/button",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["permission:button"],
+          "meta": {
+            "title": "按钮权限",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 44,
+          "name": "数据权限",
+          "path": "/permission/data",
+          "icon": "DataBoard",
+          "component": "permission/data",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["permission:data"],
+          "meta": {
+            "title": "数据权限",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "组织架构",
+      "path": "/organization",
+      "icon": "OfficeBuilding",
+      "type": "catalog",
+      "sort": 5,
+      "visible": true,
+      "status": 1,
+      "permissions": ["organization:view"],
+      "children": [
+        {
+          "id": 51,
+          "name": "部门管理",
+          "path": "/organization/department",
+          "icon": "House",
+          "component": "organization/department",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["organization:department"],
+          "meta": {
+            "title": "部门管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 52,
+          "name": "职位管理",
+          "path": "/organization/position",
+          "icon": "Briefcase",
+          "component": "organization/position",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["organization:position"],
+          "meta": {
+            "title": "职位管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 53,
+          "name": "组织结构",
+          "path": "/organization/structure",
+          "icon": "Share",
+          "component": "organization/structure",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["organization:structure"],
+          "meta": {
+            "title": "组织结构",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "系统监控",
+      "path": "/monitor",
+      "icon": "Monitor",
+      "type": "catalog",
+      "sort": 6,
+      "visible": true,
+      "status": 1,
+      "permissions": ["monitor:view"],
+      "children": [
+        {
+          "id": 61,
+          "name": "在线用户",
+          "path": "/monitor/online",
+          "icon": "View",
+          "component": "monitor/online",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["monitor:online"],
+          "meta": {
+            "title": "在线用户",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 62,
+          "name": "系统日志",
+          "path": "/monitor/logs",
+          "icon": "Document",
+          "component": "monitor/logs",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["monitor:logs"],
+          "meta": {
+            "title": "系统日志",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 63,
+          "name": "性能监控",
+          "path": "/monitor/performance",
+          "icon": "TrendCharts",
+          "component": "monitor/performance",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["monitor:performance"],
+          "meta": {
+            "title": "性能监控",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 64,
+          "name": "服务器监控",
+          "path": "/monitor/server",
+          "icon": "Cpu",
+          "component": "monitor/server",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["monitor:server"],
+          "meta": {
+            "title": "服务器监控",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 65,
+          "name": "应用监控",
+          "path": "/monitor/application",
+          "icon": "Platform",
+          "component": "monitor/application",
+          "type": "menu",
+          "sort": 5,
+          "visible": true,
+          "status": 1,
+          "permissions": ["monitor:application"],
+          "meta": {
+            "title": "应用监控",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "系统工具",
+      "path": "/tools",
+      "icon": "Tools",
+      "type": "catalog",
+      "sort": 7,
+      "visible": true,
+      "status": 1,
+      "permissions": ["tools:view"],
+      "children": [
+        {
+          "id": 71,
+          "name": "代码生成",
+          "path": "/tools/generator",
+          "icon": "Magic",
+          "component": "tools/generator",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:generator"],
+          "meta": {
+            "title": "代码生成",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 72,
+          "name": "接口文档",
+          "path": "/tools/swagger",
+          "icon": "Document",
+          "component": "tools/swagger",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:swagger"],
+          "meta": {
+            "title": "接口文档",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 73,
+          "name": "构建工具",
+          "path": "/tools/build",
+          "icon": "Box",
+          "component": "tools/build",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:build"],
+          "meta": {
+            "title": "构建工具",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 74,
+          "name": "缓存管理",
+          "path": "/tools/cache",
+          "icon": "Coin",
+          "component": "tools/cache",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:cache"],
+          "meta": {
+            "title": "缓存管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 75,
+          "name": "数据库管理",
+          "path": "/tools/database",
+          "icon": "Coin",
+          "component": "tools/database",
+          "type": "menu",
+          "sort": 5,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:database"],
+          "meta": {
+            "title": "数据库管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 76,
+          "name": "定时任务",
+          "path": "/tools/schedule",
+          "icon": "Timer",
+          "component": "tools/schedule",
+          "type": "menu",
+          "sort": 6,
+          "visible": true,
+          "status": 1,
+          "permissions": ["tools:schedule"],
+          "meta": {
+            "title": "定时任务",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "数据管理",
+      "path": "/data",
+      "icon": "DataAnalysis",
+      "type": "catalog",
+      "sort": 8,
+      "visible": true,
+      "status": 1,
+      "permissions": ["data:view"],
+      "children": [
+        {
+          "id": 81,
+          "name": "数据备份",
+          "path": "/data/backup",
+          "icon": "Download",
+          "component": "data/backup",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["data:backup"],
+          "meta": {
+            "title": "数据备份",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 82,
+          "name": "Excel导入",
+          "path": "/data/import",
+          "icon": "Upload",
+          "component": "data/import/index",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["data:import"],
+          "meta": {
+            "title": "Excel导入",
+            "requireAuth": true,
+            "cache": true
+          }
+        },
+        {
+          "id": 83,
+          "name": "数据导出",
+          "path": "/data/export",
+          "icon": "Download",
+          "component": "data/export",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["data:export"],
+          "meta": {
+            "title": "数据导出",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 84,
+          "name": "数据统计",
+          "path": "/data/statistics",
+          "icon": "PieChart",
+          "component": "data/statistics",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["data:statistics"],
+          "meta": {
+            "title": "数据统计",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 85,
+          "name": "数据清理",
+          "path": "/data/cleanup",
+          "icon": "Delete",
+          "component": "data/cleanup",
+          "type": "menu",
+          "sort": 5,
+          "visible": true,
+          "status": 1,
+          "permissions": ["data:cleanup"],
+          "meta": {
+            "title": "数据清理",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "消息中心",
+      "path": "/message",
+      "icon": "Message",
+      "type": "catalog",
+      "sort": 9,
+      "visible": true,
+      "status": 1,
+      "permissions": ["message:view"],
+      "children": [
+        {
+          "id": 91,
+          "name": "系统通知",
+          "path": "/message/notice",
+          "icon": "Bell",
+          "component": "message/notice",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["message:notice"],
+          "meta": {
+            "title": "系统通知",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 92,
+          "name": "系统公告",
+          "path": "/message/announcement",
+          "icon": "ChatDotRound",
+          "component": "message/announcement",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["message:announcement"],
+          "meta": {
+            "title": "系统公告",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 93,
+          "name": "站内信",
+          "path": "/message/mail",
+          "icon": "Message",
+          "component": "message/mail",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["message:mail"],
+          "meta": {
+            "title": "站内信",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 94,
+          "name": "消息模板",
+          "path": "/message/template",
+          "icon": "Document",
+          "component": "message/template",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["message:template"],
+          "meta": {
+            "title": "消息模板",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "系统设置",
+      "path": "/system",
+      "icon": "Setting",
+      "type": "catalog",
+      "sort": 10,
+      "visible": true,
+      "status": 1,
+      "permissions": ["system:view"],
+      "children": [
+        {
+          "id": 101,
+          "name": "系统配置",
+          "path": "/system/config",
+          "icon": "Tools",
+          "component": "system/config",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["system:config"],
+          "meta": {
+            "title": "系统配置",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 102,
+          "name": "字典管理",
+          "path": "/system/dict",
+          "icon": "Collection",
+          "component": "system/dict",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["system:dict"],
+          "meta": {
+            "title": "字典管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 103,
+          "name": "参数设置",
+          "path": "/system/params",
+          "icon": "Operation",
+          "component": "system/params",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["system:params"],
+          "meta": {
+            "title": "参数设置",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 104,
+          "name": "主题设置",
+          "path": "/system/theme",
+          "icon": "Brush",
+          "component": "system/theme",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["system:theme"],
+          "meta": {
+            "title": "主题设置",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 105,
+          "name": "操作日志",
+          "path": "/system/log",
+          "icon": "Document",
+          "component": "system/log",
+          "type": "menu",
+          "sort": 5,
+          "visible": true,
+          "status": 1,
+          "permissions": ["system:log"],
+          "meta": {
+            "title": "操作日志",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "财务管理",
+      "path": "/finance",
+      "icon": "Money",
+      "type": "catalog",
+      "sort": 11,
+      "visible": true,
+      "status": 1,
+      "permissions": ["finance:view"],
+      "children": [
+        {
+          "id": 111,
+          "name": "费用管理",
+          "path": "/finance/expense",
+          "icon": "Wallet",
+          "component": "finance/expense",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["finance:expense"],
+          "meta": {
+            "title": "费用管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 112,
+          "name": "收入管理",
+          "path": "/finance/income",
+          "icon": "Money",
+          "component": "finance/income",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["finance:income"],
+          "meta": {
+            "title": "收入管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 113,
+          "name": "财务报表",
+          "path": "/finance/report",
+          "icon": "Document",
+          "component": "finance/report",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["finance:report"],
+          "meta": {
+            "title": "财务报表",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "内容管理",
+      "path": "/content",
+      "icon": "Notebook",
+      "type": "catalog",
+      "sort": 12,
+      "visible": true,
+      "status": 1,
+      "permissions": ["content:view"],
+      "children": [
+        {
+          "id": 121,
+          "name": "文章管理",
+          "path": "/content/article",
+          "icon": "Document",
+          "component": "content/article",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["content:article"],
+          "meta": {
+            "title": "文章管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 122,
+          "name": "分类管理",
+          "path": "/content/category",
+          "icon": "Collection",
+          "component": "content/category",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["content:category"],
+          "meta": {
+            "title": "分类管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 123,
+          "name": "标签管理",
+          "path": "/content/tags",
+          "icon": "PriceTag",
+          "component": "content/tags",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["content:tags"],
+          "meta": {
+            "title": "标签管理",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 124,
+          "name": "媒体库",
+          "path": "/content/media",
+          "icon": "Picture",
+          "component": "content/media",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["content:media"],
+          "meta": {
+            "title": "媒体库",
+            "requireAuth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "帮助中心",
+      "path": "/help",
+      "icon": "QuestionFilled",
+      "type": "catalog",
+      "sort": 13,
+      "visible": true,
+      "status": 1,
+      "permissions": ["help:view"],
+      "children": [
+        {
+          "id": 131,
+          "name": "使用文档",
+          "path": "/help/docs",
+          "icon": "Reading",
+          "component": "help/docs",
+          "type": "menu",
+          "sort": 1,
+          "visible": true,
+          "status": 1,
+          "permissions": ["help:docs"],
+          "meta": {
+            "title": "使用文档",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 132,
+          "name": "常见问题",
+          "path": "/help/faq",
+          "icon": "ChatLineRound",
+          "component": "help/faq",
+          "type": "menu",
+          "sort": 2,
+          "visible": true,
+          "status": 1,
+          "permissions": ["help:faq"],
+          "meta": {
+            "title": "常见问题",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 133,
+          "name": "联系我们",
+          "path": "/help/contact",
+          "icon": "Phone",
+          "component": "help/contact",
+          "type": "menu",
+          "sort": 3,
+          "visible": true,
+          "status": 1,
+          "permissions": ["help:contact"],
+          "meta": {
+            "title": "联系我们",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 134,
+          "name": "关于系统",
+          "path": "/help/about",
+          "icon": "InfoFilled",
+          "component": "help/about",
+          "type": "menu",
+          "sort": 4,
+          "visible": true,
+          "status": 1,
+          "permissions": ["help:about"],
+          "meta": {
+            "title": "关于系统",
+            "requireAuth": true
+          }
+        },
+        {
+          "id": 135,
+          "name": "版本更新",
+          "path": "/help/changelog",
+          "icon": "Notification",
+          "component": "help/changelog",
+          "type": "menu",
+          "sort": 5,
+          "visible": true,
+          "status": 1,
+          "permissions": ["help:changelog"],
+          "meta": {
+            "title": "版本更新",
+            "requireAuth": true
+          }
+        }
+      ]
+    }
+  ]
+}

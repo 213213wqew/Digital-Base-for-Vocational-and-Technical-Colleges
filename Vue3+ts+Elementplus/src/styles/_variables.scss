@@ -1,0 +1,378 @@
+/* =========================== SASS 变量定义 =========================== */
+
+// 颜色变量
+$primary-color: #409eff;
+$primary-color-light: #79bbff;
+$primary-color-dark: #337ecc;
+$primary-color-lighter: #a0cfff;
+
+$success-color: #67c23a;
+$success-color-light: #95d475;
+$success-color-dark: #529b2e;
+
+$warning-color: #e6a23c;
+$warning-color-light: #ebb563;
+$warning-color-dark: #b88230;
+
+$danger-color: #f56c6c;
+$danger-color-light: #f78989;
+$danger-color-dark: #c45656;
+
+$info-color: #909399;
+$info-color-light: #a6a9ad;
+$info-color-dark: #73767a;
+
+// 文本颜色
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #a8abb2;
+$text-disabled: #c0c4cc;
+
+// 边框颜色
+$border-base: #dcdfe6;
+$border-light: #e4e7ed;
+$border-lighter: #ebeef5;
+$border-extra-light: #f2f6fc;
+
+// 背景颜色
+$background-base: #ffffff;
+$background-light: #fcfcfc;
+$background-lighter: #f5f7fa;
+
+// 阴影
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 16px 0 rgba(0, 0, 0, 0.15);
+$box-shadow-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+
+// 圆角
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-medium: 6px;
+$border-radius-large: 8px;
+$border-radius-round: 20px;
+$border-radius-circle: 100%;
+
+// 间距
+$spacing-xs: 4px;
+$spacing-small: 8px;
+$spacing-base: 12px;
+$spacing-medium: 16px;
+$spacing-large: 24px;
+$spacing-xl: 32px;
+
+// 字体大小
+$font-size-mini: 10px;
+$font-size-small: 12px;
+$font-size-base: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+
+// 行高
+$line-height-base: 1.5;
+$line-height-small: 1.25;
+$line-height-large: 1.75;
+
+// 动画
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// 层级
+$z-index-popper: 2000;
+$z-index-dropdown: 1000;
+$z-index-sticky: 900;
+$z-index-fixed: 800;
+$z-index-overlay: 500;
+
+// 布局
+$header-height: 60px;
+$sidebar-width: 280px;
+$sidebar-collapsed-width: 64px;
+$footer-height: 60px;
+
+/* =========================== CSS 变量定义 =========================== */
+
+// CSS 变量定义
+:root {
+  // 主色调
+  --primary-color: #409eff;
+  --primary-light: #79bbff;
+  --primary-dark: #337ecc;
+
+  // 成功色
+  --success-color: #67c23a;
+  --success-light: #95d475;
+  --success-dark: #529b2e;
+
+  // 警告色
+  --warning-color: #e6a23c;
+  --warning-light: #ebb563;
+  --warning-dark: #b88230;
+
+  // 危险色
+  --danger-color: #f56c6c;
+  --danger-light: #f78989;
+  --danger-dark: #c45656;
+
+  // 信息色
+  --info-color: #909399;
+  --info-light: #a6a9ad;
+  --info-dark: #73767a;
+
+  // 文本色
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --text-color-placeholder: #a8abb2;
+  --text-color-disabled: #c0c4cc;
+
+  // 边框色
+  --border-color-base: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  --border-color-lighter: #ebeef5;
+  --border-color-extra-light: #f2f6fc;
+
+  // 背景色
+  --bg-color: #ffffff;
+  --bg-color-page: #f2f3f5;
+  --bg-color-light: #fcfcfc;
+
+  // 阴影
+  --box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  --box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+  // 圆角
+  --border-radius-base: 4px;
+  --border-radius-small: 2px;
+  --border-radius-large: 6px;
+  --border-radius-round: 20px;
+  --border-radius-circle: 100%;
+
+  // 间距
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  // 字体大小
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+
+  // 行高
+  --line-height-base: 1.5;
+  --line-height-sm: 1.25;
+  --line-height-lg: 1.75;
+
+  // 层级
+  --z-index-popper: 2000;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 900;
+  --z-index-fixed: 800;
+  --z-index-overlay: 500;
+
+  // 布局
+  --header-height: 60px;
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 64px;
+  --footer-height: 60px;
+
+  // 动画时间
+  --transition-duration: 0.3s;
+  --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// 暗色主题 - 大幅优化
+[data-theme="dark"] {
+  // 主色调在暗色模式下稍微调亮
+  --primary-color: #529eff;
+  --primary-light: #7bb8ff;
+  --primary-dark: #3a7bd5;
+
+  // 成功色优化
+  --success-color: #52c41a;
+  --success-light: #73d13d;
+  --success-dark: #389e0d;
+
+  // 警告色优化
+  --warning-color: #faad14;
+  --warning-light: #ffc53d;
+  --warning-dark: #d48806;
+
+  // 危险色优化
+  --danger-color: #ff4d4f;
+  --danger-light: #ff7875;
+  --danger-dark: #cf1322;
+
+  // 信息色优化
+  --info-color: #1890ff;
+  --info-light: #40a9ff;
+  --info-dark: #096dd9;
+
+  // 文本色 - 统一的灰度系统
+  --text-color-primary: #ffffff;
+  --text-color-regular: #e8e8e8;
+  --text-color-secondary: #bfbfbf;
+  --text-color-placeholder: #8c8c8c;
+  --text-color-disabled: #595959;
+
+  // 边框色 - 统一的暗色边框系统
+  --border-color-base: #424242;
+  --border-color-light: #3a3a3a;
+  --border-color-lighter: #2f2f2f;
+  --border-color-extra-light: #262626;
+
+  // 背景色 - 统一的暗色背景系统
+  --bg-color: #1f1f1f;
+  --bg-color-page: #141414;
+  --bg-color-light: #262626;
+
+  // 阴影在暗色模式下调整
+  --box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --box-shadow-light: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+  // Element Plus 组件变量重写
+  --el-color-primary: #529eff;
+  --el-color-primary-light-3: #7bb8ff;
+  --el-color-primary-light-5: #91c7ff;
+  --el-color-primary-light-7: #b8dbff;
+  --el-color-primary-light-8: #d1edff;
+  --el-color-primary-light-9: #ecf5ff;
+  --el-color-primary-dark-2: #3a7bd5;
+
+  --el-color-success: #52c41a;
+  --el-color-warning: #faad14;
+  --el-color-danger: #ff4d4f;
+  --el-color-error: #ff4d4f;
+  --el-color-info: #1890ff;
+
+  // 文本颜色
+  --el-text-color-primary: #ffffff;
+  --el-text-color-regular: #e8e8e8;
+  --el-text-color-secondary: #bfbfbf;
+  --el-text-color-placeholder: #8c8c8c;
+  --el-text-color-disabled: #595959;
+
+  // 背景颜色
+  --el-bg-color: #1f1f1f;
+  --el-bg-color-page: #141414;
+  --el-bg-color-overlay: #1f1f1f;
+
+  // 边框颜色
+  --el-border-color: #424242;
+  --el-border-color-light: #3a3a3a;
+  --el-border-color-lighter: #2f2f2f;
+  --el-border-color-extra-light: #262626;
+  --el-border-color-dark: #4d4d4d;
+  --el-border-color-darker: #595959;
+
+  // 填充颜色
+  --el-fill-color: #2f2f2f;
+  --el-fill-color-light: #3a3a3a;
+  --el-fill-color-lighter: #424242;
+  --el-fill-color-extra-light: #4d4d4d;
+  --el-fill-color-dark: #262626;
+  --el-fill-color-darker: #1f1f1f;
+  --el-fill-color-blank: transparent;
+
+  // 表格特殊样式
+  --el-table-border-color: #3a3a3a;
+  --el-table-bg-color: #1f1f1f;
+  --el-table-tr-bg-color: #1f1f1f;
+  --el-table-header-bg-color: #262626;
+  --el-table-row-hover-bg-color: #2f2f2f;
+  --el-table-current-row-bg-color: #3a3a3a;
+  --el-table-header-text-color: #e8e8e8;
+  --el-table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  // 菜单特殊样式
+  --el-menu-bg-color: #1f1f1f;
+  --el-menu-hover-bg-color: #2f2f2f;
+  --el-menu-item-hover-bg-color: #2f2f2f;
+  --el-menu-text-color: #e8e8e8;
+  --el-menu-active-color: #529eff;
+  --el-menu-border-color: #3a3a3a;
+
+  // 卡片样式
+  --el-card-border-color: #3a3a3a;
+  --el-card-bg-color: #1f1f1f;
+
+  // 对话框样式
+  --el-dialog-bg-color: #1f1f1f;
+  --el-overlay-color: rgba(0, 0, 0, 0.8);
+  --el-overlay-color-light: rgba(0, 0, 0, 0.7);
+  --el-overlay-color-lighter: rgba(0, 0, 0, 0.5);
+
+  // 下拉框样式
+  --el-dropdown-bg-color: #1f1f1f;
+  --el-dropdown-border-color: #3a3a3a;
+
+  // 输入框样式
+  --el-input-bg-color: #262626;
+  --el-input-border-color: #3a3a3a;
+  --el-input-hover-border-color: #529eff;
+  --el-input-focus-border-color: #529eff;
+  --el-input-transparent-border-color: transparent;
+  --el-input-border-radius: 4px;
+
+  // 按钮样式
+  --el-button-bg-color: #262626;
+  --el-button-border-color: #3a3a3a;
+  --el-button-hover-bg-color: #2f2f2f;
+  --el-button-hover-border-color: #424242;
+  --el-button-active-bg-color: #1f1f1f;
+  --el-button-active-border-color: #2f2f2f;
+
+  // 分页器样式
+  --el-pagination-bg-color: #262626;
+  --el-pagination-button-bg-color: #262626;
+  --el-pagination-button-color: #e8e8e8;
+  --el-pagination-button-disabled-bg-color: #1f1f1f;
+  --el-pagination-button-disabled-color: #595959;
+  --el-pagination-hover-color: #529eff;
+
+  // 滚动条样式
+  --el-scrollbar-bg-color: #2f2f2f;
+  --el-scrollbar-hover-bg-color: #424242;
+}
+
+// 媒体查询断点
+$breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1920px,
+);
+
+// SCSS 变量
+$primary-color: var(--primary-color);
+$success-color: var(--success-color);
+$warning-color: var(--warning-color);
+$danger-color: var(--danger-color);
+$info-color: var(--info-color);
+
+$text-color-primary: var(--text-color-primary);
+$text-color-regular: var(--text-color-regular);
+$text-color-secondary: var(--text-color-secondary);
+
+$border-color-base: var(--border-color-base);
+$border-color-light: var(--border-color-light);
+
+$bg-color: var(--bg-color);
+$bg-color-page: var(--bg-color-page);
+
+$border-radius-base: var(--border-radius-base);
+$box-shadow-base: var(--box-shadow-base);
+
+$header-height: var(--header-height);
+$sidebar-width: var(--sidebar-width);
+$sidebar-collapsed-width: var(--sidebar-collapsed-width);

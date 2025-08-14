@@ -1,0 +1,157 @@
+@forward "element-plus/theme-chalk/dark/css-vars.css";
+
+// Element Plus 自定义样式
+
+// 自定义 Element Plus 主题变量
+:root {
+  --el-color-primary: #409eff;
+  --el-border-radius-base: 6px;
+  --el-border-radius-small: 4px;
+  --el-box-shadow-base:
+    0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+
+// 表单样式优化
+.el-form {
+  .el-form-item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 表格样式优化
+.el-table {
+  border-radius: var(--el-border-radius-base);
+  overflow: hidden;
+
+  th.el-table__cell {
+    background-color: #f5f7fa !important;
+    color: #606266;
+    font-weight: 600;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  // 表头与内容对齐
+  th.el-table__cell .cell,
+  td.el-table__cell .cell {
+    padding: 0 8px;
+    box-sizing: border-box;
+    line-height: 23px;
+  }
+
+  // 修复选择列对齐问题
+  .el-table-column--selection .cell {
+    padding-left: 14px;
+    padding-right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // 表格行高度统一
+  tr {
+    height: 54px;
+  }
+
+  // 表头居中对齐
+  .el-table__header {
+    th .cell {
+      text-align: center !important;
+    }
+  }
+}
+
+// 按钮样式优化
+.el-button {
+  border-radius: var(--el-border-radius-base);
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.el-table__row--level-1:hover > td {
+  background-color: #3ba3f3 !important;
+}
+// Element Plus 表格样式穿透
+.el-table {
+  .menu-icon-wrapper {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #e4e7ed;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #1677ff !important;
+      background-color: #e6f4ff !important;
+      box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3) !important;
+      transform: translateY(-1px) !important;
+
+      .menu-icon {
+        color: #1677ff !important;
+        transform: scale(1.1) !important;
+      }
+    }
+
+    .menu-icon {
+      font-size: 14px;
+      color: #606266;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // 表格行悬停样式加深
+  .el-table__row {
+    &:hover {
+      background-color: #98cdec !important;
+    }
+
+    &:hover > td {
+      background-color: #98cdec !important;
+    }
+  }
+
+  // 树形表格悬停样式
+  .el-table__row--level-1:hover {
+    background-color: #7ecdfa !important;
+
+    > td {
+      background-color: #9dc5e4 !important;
+    }
+  }
+
+  .el-table__row--level-2:hover {
+    background-color: #74d4fa !important;
+
+    > td {
+      background-color: #74d4fa !important;
+    }
+  }
+}
+
+// 亮色模式下表格当前行样式
+.el-table .el-table__row.current-row > td {
+  background-color: var(--el-color-primary-light-9) !important;
+  color: var(--el-text-color-primary) !important;
+}
+
+// 暗黑模式下表格当前行样式
+[data-theme="dark"] .el-table .el-table__row.current-row > td {
+  background-color: var(--el-color-primary-dark-2) !important;
+  color: #ffffff !important;
+}

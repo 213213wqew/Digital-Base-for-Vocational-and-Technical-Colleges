@@ -1,0 +1,289 @@
+@import "./_mixins.scss";
+
+// 组件样式
+.app-container {
+  padding: 20px;
+  background-color: var(--bg-color-page);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.page-header {
+  @include flex-between;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--box-shadow-base);
+
+  .page-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-color-primary);
+    margin: 0;
+  }
+}
+
+.content-card {
+  @include card;
+  margin-bottom: 20px;
+}
+
+// 现代化图标选择器全局样式
+.icon-dialog {
+  .el-dialog {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .el-dialog__header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 20px 24px !important;
+    margin: 0 !important;
+    border-bottom: none !important;
+
+    .el-dialog__title {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: white !important;
+    }
+
+    .el-dialog__headerbtn {
+      top: 20px !important;
+      right: 20px !important;
+
+      .el-dialog__close {
+        color: white !important;
+        font-size: 20px !important;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0 !important;
+    background: #f8fafc !important;
+  }
+
+  .el-dialog__footer {
+    background: white !important;
+    border-top: 1px solid #e2e8f0 !important;
+    padding: 16px 24px !important;
+    margin: 0 !important;
+  }
+}
+
+// 图标选择器内容样式
+.icon-selector-container {
+  .category-btn {
+    &.el-button--primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+      border: none !important;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+    }
+  }
+
+  .icons-grid-table {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    gap: 2px !important;
+    padding: 2px !important;
+    background-color: #e2e8f0 !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .icon-cell {
+    width: 100px !important;
+    height: 80px !important;
+    background: white !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 4px !important;
+
+    &:hover:not(.selected) {
+      background-color: #f0f9ff !important;
+      border-color: #0ea5e9 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2) !important;
+
+      .icon-element {
+        color: #0ea5e9 !important;
+        transform: scale(1.15) !important;
+      }
+
+      .icon-label {
+        color: #0ea5e9 !important;
+        font-weight: 500 !important;
+      }
+    }
+
+    &.selected {
+      background-color: #0ea5e9 !important;
+      border-color: #0ea5e9 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3) !important;
+
+      .icon-element {
+        color: white !important;
+        transform: scale(1.15) !important;
+      }
+
+      .icon-label {
+        color: white !important;
+        font-weight: 600 !important;
+      }
+    }
+
+    .icon-element {
+      font-size: 24px !important;
+      color: #64748b !important;
+      transition: all 0.2s ease !important;
+      margin-bottom: 4px !important;
+    }
+
+    .icon-label {
+      font-size: 11px !important;
+      color: #64748b !important;
+      text-align: center !important;
+      line-height: 1.2 !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      transition: all 0.2s ease !important;
+    }
+  }
+}
+
+// 现代化菜单图标容器样式
+.menu-icon-wrapper {
+  width: 28px !important;
+  height: 28px !important;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+
+  &:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-color: #667eea !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3) !important;
+
+    .menu-icon {
+      color: white !important;
+      transform: scale(1.05) !important;
+    }
+  }
+
+  .menu-icon {
+    font-size: 14px !important;
+    color: #64748b !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+// Element Plus 表格样式穿透
+:deep(.el-table) {
+  .menu-icon-wrapper {
+    width: 28px !important;
+    height: 28px !important;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+
+    &:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+      border-color: #667eea !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3) !important;
+
+      .menu-icon {
+        color: white !important;
+        transform: scale(1.05) !important;
+      }
+    }
+
+    .menu-icon {
+      font-size: 14px !important;
+      color: #64748b !important;
+      transition: all 0.3s ease !important;
+    }
+  }
+
+  // 强制树形缩进样式 - 关键修复
+  .el-table__indent {
+    width: 32px !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+  }
+
+  .el-table__expand-icon {
+    margin-right: 8px !important;
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  // 表格行悬停样式优化
+  .el-table__row {
+    transition: background-color 0.3s ease !important;
+
+    &:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    &:hover > td {
+      background-color: transparent !important;
+    }
+  }
+
+  // 树形表格悬停样式
+  .el-table__row--level-1:hover {
+    background-color: #f8fafc !important;
+
+    > td {
+      background-color: transparent !important;
+    }
+  }
+
+  .el-table__row--level-2:hover {
+    background-color: #f1f5f9 !important;
+
+    > td {
+      background-color: transparent !important;
+    }
+  }
+
+  .el-table__row--level-3:hover {
+    background-color: #eef1f4 !important;
+
+    > td {
+      background-color: transparent !important;
+    }
+  }
+
+  .el-table__row--level-4:hover {
+    background-color: #e8ecf0 !important;
+
+    > td {
+      background-color: transparent !important;
+    }
+  }
+}

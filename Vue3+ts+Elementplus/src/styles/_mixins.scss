@@ -1,0 +1,127 @@
+/* =========================== SCSS 混入 =========================== */
+
+// 弹性布局混入
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// 卡片样式混入
+@mixin card {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--box-shadow-base);
+  padding: 20px;
+}
+
+// 渐变背景混入
+@mixin gradient-primary {
+  background: linear-gradient(135deg, #409eff 0%, #36a3f7 100%);
+}
+
+@mixin gradient-success {
+  background: linear-gradient(135deg, #67c23a 0%, #5cb85c 100%);
+}
+
+@mixin gradient-warning {
+  background: linear-gradient(135deg, #e6a23c 0%, #f39c12 100%);
+}
+
+@mixin gradient-danger {
+  background: linear-gradient(135deg, #f56c6c 0%, #e74c3c 100%);
+}
+
+// 按钮样式混入
+@mixin button-base {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@mixin button-primary {
+  @include button-base;
+  @include gradient-primary;
+  border: none;
+  box-shadow: 0 2px 8px rgba(64, 158, 255, 0.3);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(64, 158, 255, 0.4);
+  }
+}
+
+@mixin button-success {
+  @include button-base;
+  @include gradient-success;
+  border: none;
+  box-shadow: 0 2px 8px rgba(103, 194, 58, 0.3);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(103, 194, 58, 0.4);
+  }
+}
+
+@mixin button-danger {
+  @include button-base;
+  @include gradient-danger;
+  border: none;
+  box-shadow: 0 2px 8px rgba(245, 108, 108, 0.3);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 108, 108, 0.4);
+  }
+}
+
+// 输入框样式混入
+@mixin input-base {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 2px 8px rgba(64, 158, 255, 0.15);
+  }
+  
+  &.is-focus {
+    box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
+  }
+}
+
+// 对话框样式混入
+@mixin dialog-base {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+// 响应式混入
+@mixin responsive($breakpoint) {
+  @if $breakpoint == large {
+    @media (max-width: 1400px) { @content; }
+  } @else if $breakpoint == medium {
+    @media (max-width: 1200px) { @content; }
+  } @else if $breakpoint == small {
+    @media (max-width: 768px) { @content; }
+  }
+}

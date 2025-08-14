@@ -1,0 +1,426 @@
+/**
+ * Element Plus 组件样式覆盖
+ * 此文件用于覆盖 Element Plus 默认样式，使其符合项目设计规范
+ */
+
+@import "./_variables.scss";
+
+// ==================== 按钮样式 ====================
+
+.el-button {
+  // 基础按钮样式
+  font-weight: 500;
+  border-radius: $border-radius-base;
+  transition: $transition-base;
+
+  // 主要按钮
+  &--primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color-light;
+      border-color: $primary-color-light;
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+
+    &:active {
+      background-color: $primary-color-dark;
+      border-color: $primary-color-dark;
+    }
+
+    &.is-disabled {
+      background-color: $primary-color-lighter;
+      border-color: $primary-color-lighter;
+    }
+  }
+
+  // 普通按钮
+  &--default {
+    &:hover,
+    &:focus {
+      border-color: $primary-color-light;
+      color: $primary-color-light;
+    }
+  }
+
+  // 文本按钮
+  &--text {
+    color: $primary-color;
+
+    &:hover,
+    &:focus {
+      color: $primary-color-light;
+      background-color: rgba($primary-color, 0.05);
+    }
+  }
+
+  // 按钮尺寸
+  &--large {
+    height: 48px;
+    padding: 12px 24px;
+    font-size: $font-size-medium;
+  }
+
+  &--default {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: $font-size-base;
+  }
+
+  &--small {
+    height: 32px;
+    padding: 8px 16px;
+    font-size: $font-size-small;
+  }
+
+  // 圆形按钮
+  &.is-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ==================== 表单元素 ====================
+
+// 输入框
+.el-input {
+  --el-input-hover-border-color: #{$primary-color-light};
+  --el-input-focus-border-color: #{$primary-color};
+
+  .el-input__wrapper {
+    border-radius: $border-radius-base;
+    box-shadow: 0 0 0 1px $border-base inset;
+    transition: $transition-base;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $primary-color-light inset;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 1px $primary-color inset;
+    }
+  }
+
+  .el-input__inner {
+    color: $text-primary;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+}
+
+// 复选框
+.el-checkbox {
+  --el-checkbox-checked-bg-color: #{$primary-color};
+  --el-checkbox-checked-text-color: #fff;
+  --el-checkbox-checked-border-color: #{$primary-color};
+  --el-checkbox-input-border-color-hover: #{$primary-color-light};
+}
+
+// 单选框
+.el-radio {
+  --el-radio-checked-bg-color: #{$primary-color};
+  --el-radio-checked-text-color: #fff;
+  --el-radio-checked-border-color: #{$primary-color};
+  --el-radio-input-border-color-hover: #{$primary-color-light};
+}
+
+// 开关
+.el-switch {
+  --el-switch-on-color: #{$primary-color};
+
+  &.is-checked {
+    .el-switch__core {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+// 表单项
+.el-form-item {
+  margin-bottom: $spacing-medium;
+
+  &__label {
+    color: $text-regular;
+    font-weight: 500;
+  }
+
+  &__error {
+    color: $danger-color;
+    font-size: $font-size-mini;
+    padding-top: 4px;
+  }
+}
+
+// ==================== 导航组件 ====================
+
+// 菜单
+.el-menu {
+  --el-menu-active-color: #{$primary-color};
+  --el-menu-text-color: #{$text-regular};
+  --el-menu-hover-bg-color: rgba(#{$primary-color}, 0.05);
+  border-right: none;
+
+  .el-menu-item {
+    height: 50px;
+    line-height: 50px;
+
+    &.is-active {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      font-weight: 600;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  .el-sub-menu__title {
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+  }
+}
+
+// 标签页
+.el-tabs {
+  --el-tabs-header-height: 48px;
+
+  .el-tabs__item {
+    font-size: $font-size-base;
+
+    &.is-active {
+      color: $primary-color;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: $primary-color-light;
+    }
+  }
+
+  .el-tabs__active-bar {
+    background-color: $primary-color;
+  }
+}
+
+// ==================== 数据展示组件 ====================
+
+// 表格
+.el-table {
+  --el-table-border-color: #{$border-light};
+  --el-table-header-bg-color: #{$background-base};
+  --el-table-row-hover-bg-color: rgba(#{$primary-color}, 0.05);
+
+  border-radius: $border-radius-base;
+  overflow: hidden;
+
+  th.el-table__cell {
+    background-color: $background-base;
+    color: $text-regular;
+    font-weight: 600;
+    padding: $spacing-base;
+  }
+
+  td.el-table__cell {
+    padding: $spacing-small $spacing-base;
+  }
+
+  .el-table__row {
+    transition: all 0.2s;
+  }
+}
+
+// 分页
+.el-pagination {
+  --el-pagination-button-color: #{$text-regular};
+  --el-pagination-button-bg-color: #{$background-light};
+  --el-pagination-button-disabled-color: #{$text-placeholder};
+  --el-pagination-button-disabled-bg-color: #{$background-light};
+  --el-pagination-hover-color: #{$primary-color};
+  --el-pagination-font-size: #{$font-size-base};
+
+  margin-top: $spacing-medium;
+  justify-content: flex-end;
+
+  .el-pager li.is-active {
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+  }
+}
+
+// 卡片
+.el-card {
+  --el-card-border-color: #{$border-lighter};
+  --el-card-border-radius: #{$border-radius-medium};
+
+  border-radius: $border-radius-medium;
+  overflow: hidden;
+  transition: $transition-base;
+  margin-bottom: $spacing-medium;
+  box-shadow: $box-shadow-light;
+
+  &:hover {
+    box-shadow: $box-shadow-medium;
+  }
+
+  .el-card__header {
+    padding: $spacing-medium;
+    border-bottom: 1px solid $border-lighter;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  .el-card__body {
+    padding: $spacing-medium;
+  }
+}
+
+// ==================== 通知组件 ====================
+
+// 消息提示
+.el-message {
+  --el-message-bg-color: #{$background-lighter};
+  --el-message-border-color: #{$border-light};
+  --el-message-padding: #{$spacing-base} #{$spacing-medium};
+
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-light;
+
+  &--success {
+    --el-message-text-color: #{$success-color};
+    border-color: rgba($success-color, 0.1);
+    background-color: rgba($success-color, 0.05);
+  }
+
+  &--warning {
+    --el-message-text-color: #{$warning-color};
+    border-color: rgba($warning-color, 0.1);
+    background-color: rgba($warning-color, 0.05);
+  }
+
+  &--error {
+    --el-message-text-color: #{$danger-color};
+    border-color: rgba($danger-color, 0.1);
+    background-color: rgba($danger-color, 0.05);
+  }
+
+  &--info {
+    --el-message-text-color: #{$info-color};
+    border-color: rgba($info-color, 0.1);
+    background-color: rgba($info-color, 0.05);
+  }
+}
+
+// 对话框
+.el-dialog {
+  --el-dialog-border-radius: #{$border-radius-medium};
+  --el-dialog-padding-primary: #{$spacing-medium};
+
+  border-radius: $border-radius-medium;
+  box-shadow: $box-shadow-dark;
+  overflow: hidden;
+
+  .el-dialog__header {
+    padding: $spacing-medium;
+    margin-right: 0;
+    border-bottom: 1px solid $border-lighter;
+
+    .el-dialog__title {
+      font-weight: 600;
+      color: $text-primary;
+      font-size: $font-size-large;
+    }
+  }
+
+  .el-dialog__body {
+    padding: $spacing-medium;
+    color: $text-regular;
+    font-size: $font-size-base;
+  }
+
+  .el-dialog__footer {
+    padding: $spacing-base $spacing-medium $spacing-medium;
+    border-top: 1px solid $border-lighter;
+  }
+}
+
+// 抽屉
+.el-drawer {
+  --el-drawer-bg-color: #{$background-lighter};
+  --el-drawer-padding-primary: #{$spacing-medium};
+
+  .el-drawer__header {
+    margin-bottom: $spacing-medium;
+    padding: $spacing-medium;
+    border-bottom: 1px solid $border-lighter;
+
+    .el-drawer__title {
+      font-weight: 600;
+      color: $text-primary;
+      font-size: $font-size-large;
+    }
+  }
+
+  .el-drawer__body {
+    padding: 0 $spacing-medium $spacing-medium;
+  }
+}
+
+// ==================== 特殊页面组件 ====================
+
+// 登录页表单样式
+.login-form {
+  .el-form-item {
+    margin-bottom: $spacing-medium;
+  }
+
+  .el-input {
+    .el-input__wrapper {
+      border-radius: $border-radius-medium;
+      box-shadow: $box-shadow-light;
+      height: 48px;
+
+      &:hover,
+      &.is-focus {
+        box-shadow: 0 4px 12px rgba($primary-color, 0.2);
+      }
+    }
+
+    .el-input__inner {
+      height: 46px;
+      font-size: $font-size-medium;
+    }
+  }
+
+  .el-button--primary {
+    height: 48px;
+    border-radius: $border-radius-medium;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    background: linear-gradient(
+      135deg,
+      $primary-color-dark 0%,
+      $primary-color 100%
+    );
+    border: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($primary-color-dark, 0.3);
+    }
+  }
+}
